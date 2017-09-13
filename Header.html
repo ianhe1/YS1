@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>Header</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Header</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    Header-->
+<!--Purpose:                 Test the Bluemix Common Header UI-->
+<!--Last Update:           Aug 09, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify the login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Verify Doc link exists-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Docs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Docs</td>
+	<td>Docs</td>
+</tr>
+<!--Verify Hambuger Icon-->
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<!--Verify Bluemix logo and label-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img.bx--logo__image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td>Bluemix</td>
+</tr>
+<!--Verify Dashboard lable-->
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Dashboard</td>
+</tr>
+<!--Click on Docs link-->
+<tr>
+	<td>click</td>
+	<td>link=Docs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--Change focus to the new Doc popup window-->
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--Verify the Documentation page is open-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.runtime-section-content &gt; h1</td>
+	<td>Get started by deploying your first app</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Docs</td>
+</tr>
+<!--Close the Doc Pop-up window-->
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Change back to the main window-->
+<tr>
+	<td>selectWindow</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Verify the header UI components-->
+<!--Trial Days Remaining-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li/ul/li[2]</td>
+	<td></td>
+</tr>
+<!--Account name-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li[3]/ul/li/p[2]</td>
+	<td>${accountName}</td>
+</tr>
+<!--User Avita image-->
+<tr>
+	<td>verifyText</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<!--Catalog link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Catalog</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Catalog</td>
+	<td>Catalog</td>
+</tr>
+<!--Support -->
+<tr>
+	<td>verifyText</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td>Support</td>
+</tr>
+<!--Manage -->
+<tr>
+	<td>verifyText</td>
+	<td>css=#manage-link &gt; ul.bx--dropdown &gt; li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td>Manage</td>
+</tr>
+<!--Expend Trial Days Remaining menu link-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li/ul/li[2]</td>
+	<td></td>
+</tr>
+<!--Click on free monthly allowance link-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=free monthly allowance</td>
+	<td></td>
+</tr>
+<!--Verify the Pricing page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='ibm-leadspace-body']/div/div/h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ibm-leadspace-body']/div/div/h1</td>
+	<td>Bluemix Pricing</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.ibm-h4.ibm-light</td>
+	<td>Get started free with half a GB of free memory each month. Quickly deploy infrastructure and services. Pay as you go. Upgrade when you’re ready.</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<!--Click Add Credit Card button under the Trial Days Remaining menu-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li/ul/li[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=upgradeAccountLink</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<!--Verify Upgrade your account page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=fieldset.fieldset.-credit &gt; div.legend-wrapper &gt; legend.legend</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.light-header</td>
+	<td>Upgrade Your Account</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=legend.legend</td>
+	<td>Billing Information</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=close-button</td>
+	<td></td>
+</tr>
+<!--Click Apply promotion code link-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Apply promo code</td>
+	<td>50000</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.account-type__title</td>
+	<td></td>
+</tr>
+<!--Verify promoton code page-->
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.account-type__title</td>
+	<td>Account Type: Trial</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.account-type__details</td>
+	<td>Build at no cost for the duration of the trial. Your apps will stop at the end of the trial unless you upgrade your account.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.promo-code_title</td>
+	<td>Promotional Codes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--btn--secondary.promo-code__button</td>
+	<td>Add Promo Code</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.dialogMessageAreaText</td>
+	<td></td>
+</tr>
+<!--Go back to the dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<!--Verify the Region Switch Menu Items-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Expend Regionand Account switcher menu-->
+<tr>
+	<td>click</td>
+	<td>css=span.bx--account-switcher__toggle--text</td>
+	<td></td>
+</tr>
+<!--Verify the switcher dropdown menu items-->
+<!--Account-->
+<tr>
+	<td>verifyText</td>
+	<td>css=p.bx--account-switcher__menu__item--title</td>
+	<td>Account</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#acct-dropdown &gt; ul.bx--dropdown &gt; li.bx--dropdown__menu-text</td>
+	<td>${accountName}</td>
+</tr>
+<!--Region-->
+<tr>
+	<td>echo</td>
+	<td>Region = ${regionName}</td>
+	<td> ${regionName}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#region-dropdown &gt; p.bx--account-switcher__menu__item--title</td>
+	<td>Region</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#region-dropdown &gt; ul.bx--dropdown &gt; li.bx--dropdown__menu-text</td>
+	<td>${regionName}</td>
+</tr>
+<!--Organization-->
+<tr>
+	<td>verifyText</td>
+	<td>css=#org-dropdown &gt; p.bx--account-switcher__menu__item--title</td>
+	<td>Organization</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#org-dropdown &gt; ul.bx--dropdown &gt; li.bx--dropdown__menu-text</td>
+	<td>${orgName}</td>
+</tr>
+<!--Space-->
+<tr>
+	<td>verifyText</td>
+	<td>css=#space-dropdown &gt; p.bx--account-switcher__menu__item--title</td>
+	<td>Space</td>
+</tr>
+<!--Manage organizations link-->
+<tr>
+	<td>verifyText</td>
+	<td>id=manage-org</td>
+	<td>Manage organizations</td>
+</tr>
+<!--Create space link-->
+<tr>
+	<td>verifyText</td>
+	<td>id=create-a-space</td>
+	<td>Create a space</td>
+</tr>
+<!--Open the Avita menu-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo &gt; use</td>
+	<td></td>
+</tr>
+<!--Verify User name-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--dropdown__profile-dropdown--information &gt; p</td>
+	<td>${userName}</td>
+</tr>
+<!--User Profile-->
+<tr>
+	<td>verifyText</td>
+	<td>link=User Profile</td>
+	<td>User Profile</td>
+</tr>
+<!--Log Out-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Log Out</td>
+	<td>Log Out</td>
+</tr>
+<!--Close th eUser Avita menu-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo &gt; use</td>
+	<td></td>
+</tr>
+<!--Open the Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<!--Verify the Support menu items-->
+<tr>
+	<td>verifyText</td>
+	<td>id=add-ticket-menu</td>
+	<td>Add Ticket</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=view-tickets-menu</td>
+	<td>View Tickets</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=find-answers-menu</td>
+	<td>Find Answers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=status-menu</td>
+	<td>Status</td>
+</tr>
+<!--close the Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=main.main</td>
+	<td></td>
+</tr>
+<!--Open the Manage menu-->
+<tr>
+	<td>click</td>
+	<td>link=expandAccount</td>
+	<td></td>
+</tr>
+<!--Verify the first level menu items-->
+<!--Note: second level menu items will be verified in the ManageuserAccount test case-->
+<!--Account-->
+<tr>
+	<td>verifyText</td>
+	<td>link=expandAccount</td>
+	<td>expandAccount</td>
+</tr>
+<!--Billing and Usage-->
+<tr>
+	<td>verifyText</td>
+	<td>link=expandBilling and Usage</td>
+	<td>expandBilling and Usage</td>
+</tr>
+<!--Security-->
+<tr>
+	<td>verifyText</td>
+	<td>link=expandSecurity</td>
+	<td>expandSecurity</td>
+</tr>
+<!--Close the Manage menu-->
+<tr>
+	<td>click</td>
+	<td>css=ul.bx--dropdown.bx--dropdown--open &gt; li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Log Out-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<!--Confirm the Logout-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

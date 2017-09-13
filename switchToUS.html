@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>switchToUS</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">switchToUS</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    Switch To US Region -->
+<!--Purpose:                  Test the Region Switch to US-->
+<!--Last Update:            June 18, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Store Variables for US Region-->
+<tr>
+	<td>store</td>
+	<td>US South</td>
+	<td>regionName</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Region Name = ${regionName}</td>
+	<td>${regionName}</td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>echo</td>
+	<td>Base URL&nbsp;&nbsp;= ${baseURL}</td>
+	<td>${baseURL}</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log in-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify the login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Switch to US South (Dallas) region-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li[3]/ul/li/p[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=${regionName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.bx--account-switcher__toggle--text</td>
+	<td></td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Log out-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<!--Confirm the Logout-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

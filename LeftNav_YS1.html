@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>LeftNav-App</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LeftNav-App</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------------------------------>
+<!--Test Case Name:    Left_Navigation_Menu-->
+<!--Purpose:                  Test the Left Navigation Menu of Bluemix UI-->
+<!--Last Update:            Sept 03, 2017-->
+<!--TO DO:    OpenWhisk still showing in Functions page -  Defect 4348 is fixed. (London only)-->
+<!--TO DO: Skip IoT for London due to defect 4430-->
+<!------------------------------------------------------------------------------------------------>
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log in-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Click on Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--open Left navigation menu-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--left-nav__trigger--btn &gt; span</td>
+	<td></td>
+</tr>
+<!--Go to the given region to test-->
+<tr>
+	<td>echo</td>
+	<td>Region = ${regionName}</td>
+	<td>${regionName}</td>
+</tr>
+<!--Verify each menu item text of the Global Left Navigation Menu group (based on the region)-->
+<!--Containers-->
+<tr>
+	<td>verifyText</td>
+	<td>id=containers-menu</td>
+	<td>Containers</td>
+</tr>
+<!--Indrastructure-->
+<tr>
+	<td>verifyText</td>
+	<td>id=gen1-menu</td>
+	<td>Infrastructure</td>
+</tr>
+<!--VMware-->
+<tr>
+	<td>verifyText</td>
+	<td>id=vmWare-menu</td>
+	<td>VMware</td>
+</tr>
+<!--Dashboard menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=apps-menu</td>
+	<td>Dashboard</td>
+</tr>
+<!--APIs-->
+<tr>
+	<td>verifyText</td>
+	<td>id=apis-menu</td>
+	<td>APIs</td>
+</tr>
+<!--Application Services-->
+<tr>
+	<td>verifyText</td>
+	<td>id=app-services-menu</td>
+	<td>Application Services</td>
+</tr>
+<!--Blockchain menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=blockchain-menu</td>
+	<td>Blockchain</td>
+</tr>
+<!--Cloud foundry Apps menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=cf-apps-menu</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<!--Data & Analytics-->
+<tr>
+	<td>verifyText</td>
+	<td>id=data-menu</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<!--DevOps-->
+<tr>
+	<td>verifyText</td>
+	<td>id=devops-menu</td>
+	<td>DevOps</td>
+</tr>
+<!--Finance-->
+<tr>
+	<td>verifyText</td>
+	<td>id=finance-menu</td>
+	<td>Finance</td>
+</tr>
+<!--Integrate-->
+<tr>
+	<td>verifyText</td>
+	<td>id=integration-menu</td>
+	<td>Integrate</td>
+</tr>
+<!--Internet of Things-->
+<tr>
+	<td>verifyText</td>
+	<td>id=iot-menu</td>
+	<td>Internet of Things</td>
+</tr>
+<!--Network-->
+<tr>
+	<td>verifyText</td>
+	<td>id=network-menu</td>
+	<td>Network</td>
+</tr>
+<!--Functions-->
+<tr>
+	<td>verifyText</td>
+	<td>id=whisk-menu</td>
+	<td>Functions</td>
+</tr>
+<!--Schematics-->
+<tr>
+	<td>verifyText</td>
+	<td>id=schematics-menu</td>
+	<td>Schematics</td>
+</tr>
+<!--Security-->
+<tr>
+	<td>verifyText</td>
+	<td>id=security-menu</td>
+	<td>Security</td>
+</tr>
+<!--Storage-->
+<tr>
+	<td>verifyText</td>
+	<td>id=storage-menu</td>
+	<td>Storage</td>
+</tr>
+<!--Watson-->
+<tr>
+	<td>verifyText</td>
+	<td>id=watson-menu</td>
+	<td>Watson</td>
+</tr>
+<!--Web and Mobile menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=mobile-menu</td>
+	<td>Mobile</td>
+</tr>
+<!---------------------------------------------------------------------------------------------------------------->
+<!--Go to Sydney-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>NEXT</td>
+</tr>
+<!--Go to Germany-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>NEXT</td>
+</tr>
+<!--Functions menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=whisk-menu</td>
+	<td>Functions</td>
+</tr>
+<!--Go to United Kingdom-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>NEXT</td>
+</tr>
+<!--Finance menu-->
+<tr>
+	<td>verifyText</td>
+	<td>id=finance-menu</td>
+	<td>Finance</td>
+</tr>
+<!--Schematics-->
+<tr>
+	<td>verifyText</td>
+	<td>id=schematics-menu</td>
+	<td>Schematics</td>
+</tr>
+<!--Label NEXT-->
+<tr>
+	<td>label</td>
+	<td>NEXT</td>
+	<td></td>
+</tr>
+<!--Close the Navigation menu-->
+<!--Click each menu item and verofy they open the correct page.-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>UK_CONTAINER</td>
+</tr>
+<!--Containers (US)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=containers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=nav-clusters</td>
+	<td>Clusters</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=nav-containers</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--btn.bx--btn--primary</td>
+	<td>Create Cluster</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_CONTAINER</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_CONTAINER</td>
+	<td></td>
+</tr>
+<!--Containers (UK)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=containers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create containers</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_CONTAINER</td>
+	<td></td>
+</tr>
+<!--Infrastructure-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=gen1-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Infrastructure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.upgrade-banner__content-heading</td>
+	<td>Build your solution with Infrastructure</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>SKIPVM</td>
+	<td></td>
+</tr>
+<!--VMware-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=vmWare-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--detail-page-header--with-tabs__info-title</td>
+	<td>IBM Cloud for VMware Solutions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.select-title</td>
+	<td>Cloud Foundation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-attach-point']/div/div[3]/div[3]/div/div[2]</td>
+	<td>vCenter Server</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIPVM</td>
+	<td></td>
+</tr>
+<!--API-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=apis-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h1.ng-scope</td>
+	<td>Work with APIs</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ng-scope</td>
+	<td>Work with APIs</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<!--Application Services-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=app-services-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Application Services</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Application Service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Blockchain-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=blockchain-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero__header</td>
+	<td>Rapidly build with IBM Blockchain Platform</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Tools &amp; Resources</td>
+	<td>Tools &amp; Resources</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Service Plans</td>
+	<td>Service Plans</td>
+</tr>
+<!--Cloud Foundry Apps-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cf-apps-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Cloud Foundry app</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<!--Data & Analytics-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=data-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Data &amp; Analytics service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>UK_DEVOPS</td>
+</tr>
+<!--DevOps-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=devops-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.hero-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.hero-heading &gt; h1</td>
+	<td>Welcome to DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a.bx--btn &gt; span</td>
+	<td>Get Started</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//main[@id='page-content']/div/div/div/div/div[2]/div[2]/div/a/span</td>
+	<td>Learn More</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_UK_DEVOPS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_DEVOPS</td>
+	<td></td>
+</tr>
+<!--DevOps (UK)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=devops-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create DevOps service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_UK_DEVOPS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_UK_DEVOPS</td>
+	<td></td>
+</tr>
+<!--Skip Finance if it is UK region-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>SKIP_FINANCE</td>
+</tr>
+<!--Finance-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=finance-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=strong</td>
+	<td>IBM Cloud</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.home-header__title</td>
+	<td>IBM Cloud<br />for Financial ServicesBeta</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIP_FINANCE</td>
+	<td></td>
+</tr>
+<!--Integrate-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=integration-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Integrate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Integrate service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<!--TO DO: Skip IoT for London due to defect 4430-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>NETWORK</td>
+</tr>
+<!--Internet of Things-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=iot-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.dashboard-header &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.dashboard-header &gt; h1</td>
+	<td>Internet of Things</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.section-title &gt; p</td>
+	<td>Overview</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.boilerplate-content &gt; div.section-title &gt; p</td>
+	<td>Extend</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>NETWORK</td>
+	<td></td>
+</tr>
+<!--Network-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=network-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Network service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Functions-->
+<!--TO DO:    OpenWhisk still showing in Functions page -  Defect 4348 is fixed. (London only)-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=whisk-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=ow-main-develop</td>
+	<td>Start Creating</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>UK_FUNCTIONS</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ow--getstart-heading__label</td>
+	<td>Getting Started with IBM Cloud Functions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=ow-main-download</td>
+	<td>Download Cloud Functions CLI</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_UK_FUNCTIONS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_FUNCTIONS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ow--getstart-heading__label</td>
+	<td>Getting Started with IBM OpenWhisk</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=ow-main-download</td>
+	<td>Download OpenWhisk CLI</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_UK_FUNCTIONS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Skip Schematics for UK region-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>SKIP_SCHEMATICS</td>
+</tr>
+<!--Schematics-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=schematics-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bp--getting-started-heading1</td>
+	<td>IBM Cloud Schematics</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIP_SCHEMATICS</td>
+	<td></td>
+</tr>
+<!--Security-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=security-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Security service</td>
+</tr>
+<!--Storage-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=storage-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Storage service</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>WATSON_LONDON</td>
+</tr>
+<!--Watson-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=watson-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero__header</td>
+	<td>Build With Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Get a Starter Kit</td>
+	<td>Get a Starter Kit</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Get Watson Services</td>
+	<td>Get Watson Services</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>END_WATSON_LONDON</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>WATSON_LONDON</td>
+	<td></td>
+</tr>
+<!--Watson (London)-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=watson-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Watson service</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>END_WATSON_LONDON</td>
+	<td></td>
+</tr>
+<!--Web and Mobile-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--left-nav__trigger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=mobile-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.hero-info__title.ng-binding</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero-info__title.ng-binding</td>
+	<td>Fast-track your web and mobile app</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Create Project</td>
+	<td>Create Project</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=View Docs</td>
+	<td>View Docs</td>
+</tr>
+<!--Back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Dashboard</td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Logout-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify logout is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

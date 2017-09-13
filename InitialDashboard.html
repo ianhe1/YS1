@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://console-ondeck.stage1.bluemix.net/" />
+<title>InitialDashboard</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">InitialDashboard</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    InitialDashboard-->
+<!--Purpose:                 Default dashboard UI when no app and no service-->
+<!--Last Update:          Sept 03, 2017-->
+<!-------------------------------------------------------------------------->
+<!--TO DO:   Create and Run Event Driven App  Issue:4346-->
+<!--TO DO:   Issue:4328 Missing two items in Default dashboard-->
+<!-------------------------------------------------------------------------->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading-icon &gt; svg</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.description</td>
+	<td>We noticed you don't have anything on your platform yet, get started with one of the options below, or go to the catalog to create a new application or service.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Explore our Offerings</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.bx--quickstart-tile__header</td>
+	<td>Create a Cloud Foundry app</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[2]/a/h3</td>
+	<td>Deploy apps in containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[3]/a/h3</td>
+	<td>Order a monthly Bare Metal Server</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>4328</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[4]/a/h3</td>
+	<td>Create and run event-driven apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[5]/a/h3</td>
+	<td>Take advantage of IoT</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[6]/a/h3</td>
+	<td>Build cloud native mobile and web apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[7]/a/h3</td>
+	<td>API Connect</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[8]/a/h3</td>
+	<td>Deliver at the speed of the cloud</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[9]/a/h3</td>
+	<td>VMware optimized for the cloud</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_4328</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>4328</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[4]/a/h3</td>
+	<td>Take advantage of IoT</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[5]/a/h3</td>
+	<td>Build cloud native mobile and web apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[6]/a/h3</td>
+	<td>API Connect</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[7]/a/h3</td>
+	<td>VMware optimized for the cloud</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_4328</td>
+	<td></td>
+</tr>
+<!--Verify Explore our Offerings button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div/div/label/span[2]</td>
+	<td>All Categories</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[2]/div/label/span[2]</td>
+	<td>Infrastructure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[9]/div/label/span[2]</td>
+	<td>Platform</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Create Cloud Fundry app-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h3.bx--quickstart-tile__header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td>Create a Cloud Foundry App</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Deploy apps in containers-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[2]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=header.configuration__header &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=header.configuration__header &gt; h1</td>
+	<td>Create a Kubernetes Cluster</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=(//button[@type='button'])[6]</td>
+	<td>Create Cluster</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Order a Monthly Bare Metal Server-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[3]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td>Bare Metal Server</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.artifact-details-description</td>
+	<td>IBM Bare Metal Servers provide performance, flexibility, on-demand provisioning, and control. Choose between hourly or monthly pre-configured servers or customize with single to quad processing solutions that range from 4 to 72 cores. Bare metal servers are available worldwide and with no monthly contracts so you can build the best solution for your workloads.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.title-label</td>
+	<td>Features</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div/div[2]/div[2]/div[2]/div[3]/div</td>
+	<td>Images</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Create and run event-driven apps-->
+<!--TO DO: Skip Event due to Defect #4346-->
+<tr>
+	<td>gotolabel</td>
+	<td>IOT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[4]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.ow--getstart-heading__label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.ow--getstart-heading__label</td>
+	<td>Getting Started with IBM OpenWhisk</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.ow--getstart__section--heading</td>
+	<td>Save costs, scale and integrate.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.ow--getstart-heading__content &gt; p</td>
+	<td>IBM Bluemix OpenWhisk is a Function-as-a-Service (FaaS) platform which executes functions in response to incoming events and costs nothing when not in use.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>IOT</td>
+	<td></td>
+</tr>
+<!--Take advantage of IoT-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>UK_IOT</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[5]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>END_UK_IOT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_IOT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[4]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>END_UK_IOT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h2.description-label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.description-label</td>
+	<td>Internet of Things Platform Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.details-description</td>
+	<td>Get started with IBM Watson IoT platform using the Node-RED Node.js sample application. With the Starter, you can quickly simulate an Internet of Things device, create cards, generate data, and begin analyzing and displaying data in the Watson IoT Platform dashboard.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.title-label.selected-plan-title</td>
+	<td>Selected Plan:</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Build native mobile and web apps-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>UK_MobileWeb</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[6]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>END_UK_MobileWeb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_MobileWeb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[5]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>END_UK_MobileWeb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.hero-info__title.ng-binding</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero-info__title.ng-binding</td>
+	<td>Fast-track your web and mobile app</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Create Project</td>
+	<td>Create Project</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=View Docs</td>
+	<td>View Docs</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--API Connect-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>UK_API</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[7]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>END_UK_API</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_API</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[6]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>END_UK_API</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.bx--detail-page-header--with-tabs__info-title</td>
+	<td>API Connect</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.details-description</td>
+	<td>IBM API Connect is a comprehensive end-to-end API lifecycle solution that enables the automated creation of APIs, simple discovery of systems of records, self-service access for internal and third party developers and built-in security and governance. Using automated, model-driven tools, create new APIs and microservices based on Node.js and Java runtimes—all managed from a single unified console. Ensure secure &amp; controlled access to the APIs using a rich set of enforced policies. Drive innovation and engage with the developer community through the self-service developer portal. IBM API Connect provides streamlined control across the API lifecycle and also enables businesses to gain deep insights around API consumption from its built-in analytics.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.title-label</td>
+	<td>Features</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div/div[2]/div[2]/div[2]/div[2]/div</td>
+	<td>Images</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.artifact-details-plans-header.createArtifactFlexGroupRow &gt; div.title-label</td>
+	<td>Pricing Plans</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--Skip DevOps if the console region is UK (due to Defect 4328)-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>EXIT_UK_DevOps</td>
+</tr>
+<!--Deliver at the speed of the cloud (Dallas)-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>UK_DevOps</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[8]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.hero-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.hero-heading &gt; h1</td>
+	<td>Welcome to DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3</td>
+	<td>Get Started</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//main[@id='page-content']/div/div/div/div/div[2]/div[2]/h3</td>
+	<td>Learn More</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_UK_DevOps</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_DevOps</td>
+	<td></td>
+</tr>
+<!--Deliver at the speed of the cloud (London)-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[8]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.unsupported-region-ua &gt; h1</td>
+	<td>Toolchains are not yet available in this region.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_UK_DevOps</td>
+	<td></td>
+</tr>
+<!--VMware optimized for the cloud-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['consoleRegion'] == ['UK']</td>
+	<td>UK_VM</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[9]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>END_UK_VM</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>UK_VM</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div[3]/div/div/section/section/ul/li[7]/a/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>END_UK_VM</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.bx--detail-page-header--with-tabs__info-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--detail-page-header--with-tabs__info-title</td>
+	<td>IBM Cloud for VMware Solutions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.select-title</td>
+	<td>Cloud Foundation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.how-to-title</td>
+	<td>Here’s how to order</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

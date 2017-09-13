@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>LandingPage</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LandingPage</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    LandingPage -->
+<!--Purpose:                  Test the Landing page of Bluemix Console UI-->
+<!--Last Update:            Sept 1, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Verify the landing page is open-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.logo &gt; img[alt=&quot;bluemix_logo&quot;]</td>
+	<td></td>
+</tr>
+<!--Verify the UI components in the Landing page-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.logo &gt; img[alt=&quot;bluemix_logo&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.bx--global-dash-cta__header</td>
+	<td>Welcome to Bluemix, the home of 130+ unique services. Start building immediately.</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Create a free account</td>
+	<td></td>
+</tr>
+<!--Create a free account button-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Create a free account</td>
+	<td>Create a free account</td>
+</tr>
+<!--Login button-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=signup-moreinfo-msg</td>
+	<td>Learn more:</td>
+</tr>
+<!--Pricing link-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Pricing</td>
+	<td>Pricing</td>
+</tr>
+<!--Catalog link-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Catalog</td>
+	<td>Catalog</td>
+</tr>
+<!--Docs link-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Docs</td>
+	<td>Docs</td>
+</tr>
+<!--Support link-->
+<tr>
+	<td>verifyText</td>
+	<td>link=Support</td>
+	<td>Support</td>
+</tr>
+<!--Face book icon link-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img[alt=&quot;facebook logo&quot;]</td>
+	<td></td>
+</tr>
+<!--Twiter icon link-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img[alt=&quot;twitter logo&quot;]</td>
+	<td></td>
+</tr>
+<!--Youtube icon link-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img[alt=&quot;youtube logo&quot;]</td>
+	<td></td>
+</tr>
+<!--Blog icon link-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img.blog-icon</td>
+	<td></td>
+</tr>
+<!--Copyright text-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.copyright</td>
+	<td>© Copyright IBM Corp. 2014, 2017. All rights reserved.</td>
+</tr>
+<!--Bluemix logo-->
+<tr>
+	<td>verifyText</td>
+	<td>css=img[alt=&quot;bluemix_logo&quot;]</td>
+	<td></td>
+</tr>
+<!--Cloud image-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=img[alt=&quot;cloud_logo&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--Cick "Create a free account" button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Create a free account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=signup-title-trial</td>
+	<td></td>
+</tr>
+<!--Verify the Sign up page-->
+<tr>
+	<td>verifyText</td>
+	<td>id=signup-title-trial</td>
+	<td>Try Bluemix free for 30 days</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.signup-title-subheading</td>
+	<td>Sign up for an IBMid and create your Bluemix account</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=img[alt=&quot;bluemix_logo&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>exact:Email*</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=email-input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td>50000</td>
+</tr>
+<!--Click Pricing link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Pricing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Pricing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Verify Pricing page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='ibm-leadspace-body']/div/div/h1</td>
+	<td>50000</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ibm-leadspace-body']/div/div/h1</td>
+	<td>Bluemix Pricing</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td>50000</td>
+</tr>
+<!--Click Catalog link-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Catalog</td>
+	<td>50000</td>
+</tr>
+<!--Verify Catalog page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h4.bx--global-header__title--current-page.neutral-page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div/div/label/span[2]</td>
+	<td>All Categories</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[2]/div/label/span[2]</td>
+	<td>Infrastructure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[9]/div/label/span[2]</td>
+	<td>Platform</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Click Docs Link-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Docs</td>
+	<td>30000</td>
+</tr>
+<!--Verify Documentationm page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=docUISearchInput</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.runtime-section-content &gt; h1</td>
+	<td>Get started by deploying your first app</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Click Support link-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Support</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Support</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--Verify Support page-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=IBM Bluemix Support</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label.topCardLabel</td>
+	<td>exact:How can we help you?</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label.lowerCardLabel</td>
+	<td>Choose the type of question you have. Our support team will get back to you as quickly as possible.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=SalesLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur.</td>
+	<td>SalesLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=BillingLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat.</td>
+	<td>BillingLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Account and LoginLorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor.</td>
+	<td>Account and LoginLorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Technical SupportLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue.</td>
+	<td>Technical SupportLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue.</td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

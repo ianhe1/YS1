@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>CreateCFApp</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CreateCFApp</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    CreateDeleteApp-->
+<!--Purpose:                  Test Bluemix UI for Create and Delete App-->
+<!--Last Update:            Sept 11, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Create App-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[14]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=p.text__headline--catalog</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Provide App name and host name-->
+<tr>
+	<td>type</td>
+	<td>id=applicationName</td>
+	<td>MyJavaTestApp1EY</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=hostName</td>
+	<td>MyJavaTestApp1EY</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.bx--footer--config__submit-btn.bx--btn</td>
+	<td></td>
+</tr>
+<!--Verify Global Catalog UI-->
+<tr>
+	<td>verifyText</td>
+	<td>id=regionSelector__label</td>
+	<td>Select region to deploy in:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#regionSelector &gt; li.bx--dropdown__menu-text</td>
+	<td>${regionName}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=orgSelector__label</td>
+	<td>Choose an organization:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#orgSelector &gt; li.bx--dropdown__menu-text</td>
+	<td>${orgName}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=spaceSelector__label</td>
+	<td>Choose a space:</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#regionSelector &gt; li.bx--dropdown__menu-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=(//a[contains(text(),'United Kingdom')])[2]</td>
+	<td>United Kingdom</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#regionSelector &gt; li.bx--dropdown__menu-text</td>
+	<td></td>
+</tr>
+<!--Hit Create button-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--footer--config__submit-btn.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=svg.ibm-spinner &gt; circle</td>
+	<td></td>
+</tr>
+<!--Verify App is created and in Running Status in App Details-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//body[@id='body']/main/div/div/app-details-header/header/div/div/div/div[2]/div/div/ul/li/div/div</td>
+	<td>120000</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div/div/app-details-header/header/div/div/div/div[2]/div/div/ul/li/div/span[2]</td>
+	<td>Starting</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div/div/app-details-header/header/div/div/div/div[2]/div/div/ul/li/div/div</td>
+	<td>MyJavaTestApp1EY</td>
+</tr>
+<!--Verify the App is created in the correct region-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='global-header']/nav/ul[2]/li[3]/ul/li/p[4]</td>
+	<td>${regionName}</td>
+</tr>
+<!--Wait for a longer time for App status to be updated -->
+<tr>
+	<td>pause</td>
+	<td>120000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=i.app-status-icon.green</td>
+	<td>150000</td>
+</tr>
+<!--Verify App status Green icon in App Details-->
+<tr>
+	<td>verifyText</td>
+	<td>css=i.app-status-icon.green</td>
+	<td></td>
+</tr>
+<!--Verify Status text is Running-->
+<tr>
+	<td>verifyText</td>
+	<td>//body[@id='body']/main/div/div/app-details-header/header/div/div/div/div[2]/div/div/ul/li/div/span[2]</td>
+	<td>Running</td>
+</tr>
+<!--Go to App Dashboard -->
+<tr>
+	<td>clickAndWait</td>
+	<td>//body[@id='body']/main/div/div/app-details-header/header/div/div/div/div/a/p</td>
+	<td>50000</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--Verify App name in dashboard-->
+<tr>
+	<td>verifyText</td>
+	<td>css=td.col_list-text-dea_name. &gt; div.tooltip-widget &gt; span</td>
+	<td>MyJavaTestApp1EY</td>
+</tr>
+<!--Verify App status in dashboard is running-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--running__text</td>
+	<td>running</td>
+</tr>
+<!--Verify Pagination UI-->
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='cfApp']/div[2]/div/div/span[2]</td>
+	<td>1-1 of 1 items</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--pagination__right &gt; span.bx--pagination__text</td>
+	<td>1 of 1 pages</td>
+</tr>
+<!--Stop App from App Dashboard-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--overflow-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.bx--overflow-menu__btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.bx--modal-inner &gt; div.bx--modal__buttons &gt; div.bx--modal__buttons-container &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.bx--modal-inner &gt; div.bx--modal__buttons &gt; div.bx--modal__buttons-container &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.bx--running__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>50000</td>
+	<td></td>
+</tr>
+<!--Verify App is stopped-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--running__text</td>
+	<td>stopped</td>
+</tr>
+<!--Start App from App Dashboard-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--overflow-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.bx--overflow-menu__btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>80000</td>
+	<td></td>
+</tr>
+<!--Verify App is started-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--running__text</td>
+	<td>running</td>
+</tr>
+<!--Delete App from App Dashboard-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--overflow-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.bx--overflow-menu__btn--delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.bx--modal-inner &gt; div.bx--modal__buttons &gt; div.bx--modal__buttons-container &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.bx--modal-inner &gt; div.bx--modal__buttons &gt; div.bx--modal__buttons-container &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Verify App is deleted-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Explore our Offerings</td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Log out-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo &gt; use</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logoutmessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

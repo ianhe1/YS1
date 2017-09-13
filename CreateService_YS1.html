@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>CreateService</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">CreateService</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    CreateDeleteService-->
+<!--Purpose:                  Test Bluemix UI for Create and Delete Service-->
+<!--Last Update:            Sept 13, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Login-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Go to Catalog-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Catalog</td>
+	<td></td>
+</tr>
+<!--Flow Control - DALLAS-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['US South']</td>
+	<td>DALLAS</td>
+</tr>
+<!--Flow Control - LONDON-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>DALLAS</td>
+</tr>
+<!--Flow Control - SYDNEY-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>DALLAS</td>
+</tr>
+<!--Flow Control - GERMANY-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>DALLAS</td>
+</tr>
+<!--Select Watson (LONDON)-->
+<tr>
+	<td>label</td>
+	<td>LONDON</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[24]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Select Watson (DALLAS)-->
+<tr>
+	<td>label</td>
+	<td>DALLAS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[24]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<!--Exit Dallas-->
+<tr>
+	<td>gotolabel</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Select Watson (SYDNEY)-->
+<tr>
+	<td>label</td>
+	<td>SYDNEY</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[24]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<!--Exit Sydney-->
+<tr>
+	<td>gotolabel</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Select Watson (GERMANY)-->
+<tr>
+	<td>label</td>
+	<td>GERMANY</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[24]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<!--Exit Germany-->
+<tr>
+	<td>gotolabel</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Label  DONE-->
+<tr>
+	<td>label</td>
+	<td>DONE</td>
+	<td></td>
+</tr>
+<!--Choose Conversation service-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['buildName'] == ['YS1']</td>
+	<td>YS1</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>YP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=p.text__headline--catalog</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>DONE1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>YS1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>DONE1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>DONE1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.bx--footer--config__submit-btn.bx--btn</td>
+	<td></td>
+</tr>
+<!--Provide Service name and Credential name-->
+<tr>
+	<td>type</td>
+	<td>id=serviceName</td>
+	<td>IanService1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serviceKeyName</td>
+	<td>IanService1</td>
+</tr>
+<!--Verify Global Catalog Component-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.bx--footer--config__submit-btn.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=regionSelector__label</td>
+	<td>Select region to deploy in:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#regionSelector &gt; li.bx--dropdown__menu-text</td>
+	<td>${regionName}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=orgSelector__label</td>
+	<td>Choose an organization:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=spaceSelector__label</td>
+	<td>Choose a space:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#orgSelector &gt; li.bx--dropdown__menu-text</td>
+	<td>${orgName}</td>
+</tr>
+<!--Hit Create button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.bx--footer--config__submit-btn.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=manage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=manage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify service name in Service details view-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//section[@id='mainTitle']/div/div/h1/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//section[@id='mainTitle']/div/div/h1/span[2]</td>
+	<td>Conversation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Watson</td>
+</tr>
+<!--Go back to Watson page-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.bx--breadcrumb-item &gt; a.bx--link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>SKIP_WATSON_PAGE</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.hero__header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.hero__header</td>
+	<td>Build With Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.section__header</td>
+	<td>Starter Kits</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//main[@id='content']/div/div/div/section/div[2]/div[2]/div/h2</td>
+	<td>Watson Services</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=h1.bx--logo__text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIP_WATSON_PAGE</td>
+	<td></td>
+</tr>
+<!--Verify service is created and displayed in dashboard-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>SKIP_VERIFY</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.resource-group-header-text</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Dashboard</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=td.col_list-text_service_offering_name. &gt; div.tooltip-widget &gt; span</td>
+	<td>Conversation</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>EXIT_VERIFY</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIP_VERIFY</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Create Watson service</td>
+	<td>Create Watson service</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=td.col_list-text_service_offering_name. &gt; div.tooltip-widget &gt; span</td>
+	<td>Conversation</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>EXIT_VERIFY</td>
+	<td></td>
+</tr>
+<!--Verify the pagination UI-->
+<tr>
+	<td>verifyText</td>
+	<td>css=div.bx--pagination__right &gt; span.bx--pagination__text</td>
+	<td>1 of 1 pages</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.bx--pagination__text</td>
+	<td>Items per page&nbsp;&nbsp;|</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>DELETE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>DELETE</td>
+	<td></td>
+</tr>
+<!--Delete service-->
+<tr>
+	<td>click</td>
+	<td>css=button.bx--overflow-menu__btn--delete</td>
+	<td></td>
+</tr>
+<!--Confirm the deletion-->
+<tr>
+	<td>click</td>
+	<td>css=div.bx--modal-inner &gt; div.bx--modal__buttons &gt; div.bx--modal__buttons-container &gt; button.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>15000</td>
+	<td></td>
+</tr>
+<!--Verify service is deleted-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['US South']</td>
+	<td>WATSON_DALLAS1</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Create Watson service</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>AA</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>WATSON_DALLAS1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=intro-create-button</td>
+	<td>Explore our Offerings</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>AA</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>AA</td>
+	<td></td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Log out-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo &gt; use</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=logoutmessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

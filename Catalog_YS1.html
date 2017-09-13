@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>Catalog</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Catalog</td></tr>
+</thead><tbody>
+<!--Test Case Name:    Catalog-->
+<!--Purpose:                  Test the Bluemix Catalog UI-->
+<!--Last Update:            Sept 11, 2017-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log In-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Login button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify Login is successful-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.intro-section-heading</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Click on Catalog link from the header-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Catalog</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Region = ${regionName}</td>
+	<td>${regionName}</td>
+</tr>
+<!--Flow Control - Dallas-->
+<!--New global catalog is the same for all regions. So use Dallas for all regions.-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['US South']</td>
+	<td>Dallas</td>
+</tr>
+<!--Flow Control - London-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['United Kingdom']</td>
+	<td>Dallas</td>
+</tr>
+<!--Flow Control - Germany-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Germany']</td>
+	<td>Dallas</td>
+</tr>
+<!--Flow Control - Sydney-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['regionName'] == ['Sydney']</td>
+	<td>Dallas</td>
+</tr>
+<!--Verify Catralog left navigation menu items (Dallas)-->
+<tr>
+	<td>label</td>
+	<td>Dallas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>In Region = ${regionName}</td>
+	<td>${regionName}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[2]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[7]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[13]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div/div/label/span[2]</td>
+	<td>All Categories</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[2]/div/label/span[2]</td>
+	<td>Infrastructure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[3]/div/label/span[2]</td>
+	<td>Compute</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[4]/div/label/span[2]</td>
+	<td>Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[5]/div/label/span[2]</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[6]/div/label/span[2]</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[7]/div/label/span[2]</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[8]/div/label/span[2]</td>
+	<td>VMware</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[9]/div/label/span[2]</td>
+	<td>Platform</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[10]/div/label/span[2]</td>
+	<td>Boilerplates</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[11]/div/label/span[2]</td>
+	<td>APIs</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[12]/div/label/span[2]</td>
+	<td>Application Services</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[13]/div/label/span[2]</td>
+	<td>Blockchain</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[14]/div/label/span[2]</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[15]/div/label/span[2]</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[16]/div/label/span[2]</td>
+	<td>DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[17]/div/label/span[2]</td>
+	<td>Functions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[18]/div/label/span[2]</td>
+	<td>Integrate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[19]/div/label/span[2]</td>
+	<td>Internet of Things</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[20]/div/label/span[2]</td>
+	<td>Mobile</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[21]/div/label/span[2]</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[22]/div/label/span[2]</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[23]/div/label/span[2]</td>
+	<td>Watson</td>
+</tr>
+<!--Verify Search field and Filter-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=search__input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.filter__text</td>
+	<td>Filter</td>
+</tr>
+<!--infrastructure category-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[2]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<!--Compute-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[3]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Build your virtual environments.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Bare Metal Server</td>
+</tr>
+<!--Storage-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[4]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Order storage.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Block Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>Cloud Object Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[3]/div/div[2]/p</td>
+	<td>Content Delivery Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[4]/div/div[2]/p</td>
+	<td>File Storage</td>
+</tr>
+<!--Network-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[5]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Order network.</td>
+</tr>
+<!--Security-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[6]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Order security.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>FortiGate Security Appliance</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>Hardware Firewall</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[3]/div/div[2]/p</td>
+	<td>Hardware Firewall (Dedicated)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[4]/div/div[2]/p</td>
+	<td>SSL Certificates</td>
+</tr>
+<!--Containers-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[7]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Get started by creating a Kubernetes cluster, or manage your container images in the registry.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Kubernetes Cluster</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[3]/a[2]/div/div[2]/p</td>
+	<td>Container Registry</td>
+</tr>
+<!--VMware Solutions-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[8]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>VMware Solutions offers on-demand deployment and management of VMware Cloud Foundation and vCenter Server.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>VMware Solutions</td>
+</tr>
+<!--Boilerplates-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[10]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Get started with a new app, now.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>ASP.NET Core Cloudant Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>Forms Experience Builder</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[3]/div/div[2]/p</td>
+	<td>Internet of Things Platform Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[4]/div/div[2]/p</td>
+	<td>IoT for Electronics Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[5]/div/div[2]/p</td>
+	<td>Java Cloudant Web Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[6]/div/div[2]/p</td>
+	<td>Java Workload Scheduler Web Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[7]/div/div[2]/p</td>
+	<td>LoopBack Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[8]/div/div[2]/p</td>
+	<td>MobileFirst Services Starter</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[9]/div/div[2]/p</td>
+	<td>Node.js Cloudant DB Web Starter</td>
+</tr>
+<!--APIs-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[11]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>APIs published in your org or shared from API Management.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>API Connect</td>
+</tr>
+<!--Application Services-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[12]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Deliver new web and mobile apps.</td>
+</tr>
+<!--BlockChain-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[13]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>The service enables the creation of blockchain business networks with ownership and control distributed across different organizations.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Blockchain</td>
+</tr>
+<!--Cloud Foundry Apps-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[14]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Deploy your app without managing underlying infrastructure.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Liberty for Java™</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>SDK for Node.js™</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[3]/div/div[2]/p</td>
+	<td>ASP.NET Core</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[4]/div/div[2]/p</td>
+	<td>Runtime for Swift</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[5]/div/div[2]/p</td>
+	<td>XPages</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[6]/div/div[2]/p</td>
+	<td>Go</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[7]/div/div[2]/p</td>
+	<td>PHP</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[8]/div/div[2]/p</td>
+	<td>Python</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[9]/div/div[2]/p</td>
+	<td>Ruby</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[10]/div/div[2]/p</td>
+	<td>Tomcat</td>
+</tr>
+<!--Data & Analytics-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[15]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Essential data services; limitless possibilities.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Apache Spark</td>
+</tr>
+<!--DevOps-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[16]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>From development to deployment.</td>
+</tr>
+<!--Integrate-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[18]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Extend existing investments and infrastructure.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>API Connect</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>App Connect</td>
+</tr>
+<!--Internet of Things-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[19]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>A new generation of applications.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Internet of Things Platform</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[2]/div/div[2]/p</td>
+	<td>Context Mapping</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='react-content']/div/div[3]/div[2]/div/div[2]/a[3]/div/div[2]/p</td>
+	<td>Driver Behavior</td>
+</tr>
+<!--Mobile-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[20]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Quickly get started with your next app.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>App ID</td>
+</tr>
+<!--Network-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[21]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Build your cloud networking infrastructure.</td>
+</tr>
+<!--Functions-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[17]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Execute code on demand in a highly scalable, serverless environment.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.text__headline--catalog</td>
+	<td>Functions</td>
+</tr>
+<!--Security-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[22]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Build security into application design.</td>
+</tr>
+<!--Watson-->
+<tr>
+	<td>click</td>
+	<td>//div[@id='react-content']/div/div[2]/div/div[23]/div/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.category-description</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.category-description</td>
+	<td>Build cognitive apps that help enhance, scale, and accelerate human expertise.</td>
+</tr>
+<!--Go back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td>Dashboard</td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Logout-->
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logou is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

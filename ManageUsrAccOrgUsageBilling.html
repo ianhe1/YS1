@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="selenium.base" href="https://console-ondeck.bluemix.net/" /> -->
+<title>ManageUserAccountOrgUsageBilling</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ManageUserAccountOrgUsageBilling</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    ManageUsrAccOrgUsageBilling-->
+<!--Purpose:                  Test the Manage menu of Bluemix UI-->
+<!--Last Update:            July 31, 2017-->
+<!--TO DO:  remove the temp fix for Notification page Issue 4243-->
+<!-------------------------------------------------------------------------->
+<!--Test Case Start Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>Start_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Start time = ${Start_time}</td>
+	<td></td>
+</tr>
+<!--Skip Login-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>START</td>
+</tr>
+<!--Open Bluemix URL-->
+<tr>
+	<td>open</td>
+	<td>${baseURL}</td>
+	<td></td>
+</tr>
+<!--Log in-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<!--Provide user name-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${userID}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continuebutton</td>
+	<td></td>
+</tr>
+<!--Provide password-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${password}</td>
+</tr>
+<!--Click Sign in button-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=signinbutton</td>
+	<td></td>
+</tr>
+<!--Verify it is logged in is successful and user is in dashboard page-->
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=intro-create-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.intro-section-heading &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--Skip Log in-->
+<tr>
+	<td>label</td>
+	<td>START</td>
+	<td></td>
+</tr>
+<!--Manage Account > User-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=users-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.bx--btn--sm.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=page-title</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--btn--sm.bx--btn</td>
+	<td>Invite usersadd--glyph</td>
+</tr>
+<!--Manage Account > Organizations-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=manage-org-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>12000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div.manage-orgs &gt; h1.base--h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.manage-orgs &gt; h1.base--h1</td>
+	<td>Manage Organizations</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[12]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.org-name-text</td>
+	<td>${orgName}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Edit Org</td>
+	<td>Edit Org</td>
+</tr>
+<!--Manage Account > Notifications-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=notification-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>12000</td>
+	<td></td>
+</tr>
+<!------------------ temp fix for Issue 4243 ------------------------>
+<tr>
+	<td>click</td>
+	<td>id=platform-notifications</td>
+	<td></td>
+</tr>
+<!------------------ temp fix for Issue 4243 ------------------------>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.platform_notifications.notifications &gt; h1.base--h1</td>
+	<td>Platform Notifications</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.usage__section-info</td>
+	<td>You can enable notifications for incidents and planned maintenance.</td>
+</tr>
+<!--Manage Billing and Usage > Billing-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=unified-billing-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.account-type__title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.account-type__title</td>
+	<td>Account Type: Trial</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.credits-remaining__title</td>
+	<td>Account Upgrade</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=credits-remaining-button</td>
+	<td>Add Credit Card</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.promo-code_title</td>
+	<td>Promotional Codes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--btn--secondary.promo-code__button</td>
+	<td>Add Promo Code</td>
+</tr>
+<!--Manage Billing and Usage > Usage-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=unified-usage-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.usage-dashboard &gt; h1.base--h1</td>
+	<td>Usage Dashboard</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.org-region-dropdown__title</td>
+	<td>See How Busy Your Apps Are!</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.bx--label</td>
+	<td>View by</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='account-usage-dashboard']/div/div/div/div/div[2]/h2</td>
+	<td>Region</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='account-usage-dashboard']/div/div/div/div/div[3]/h2</td>
+	<td>Month</td>
+</tr>
+<!--Manage Security > Identity and Access-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=iam-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=page-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=page-title</td>
+	<td>Users</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.bx--btn--sm.bx--btn</td>
+	<td>Invite usersadd--glyph</td>
+</tr>
+<!--Manage Security > Bluemix API Keys-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=api-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button.bx--btn--sm.bx--btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=page-title</td>
+	<td>Bluemix API Keys</td>
+</tr>
+<!--Click on Bluemix Home logo to go back to dashboard-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=span.bx--logo__text--bold.bluemix-product-title</td>
+	<td></td>
+</tr>
+<!--User Profile-->
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=User Profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>12000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.base--h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.base--h1</td>
+	<td>Profile</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2.photo__title</td>
+	<td>Add a Photo</td>
+</tr>
+<!--Skip Logout-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['standalone'] == ['NO']</td>
+	<td>FINISH</td>
+</tr>
+<!--Log out-->
+<tr>
+	<td>click</td>
+	<td>css=svg.bx--top-nav__item--icon.global-profile__default-photo &gt; use</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<!--Confirm Logout-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//a[contains(text(),'Log Out')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<!--Verify Logout is successful-->
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Log in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Log in</td>
+	<td>Log in</td>
+</tr>
+<!--End of Test-->
+<tr>
+	<td>label</td>
+	<td>FINISH</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>End of Test Case</td>
+	<td></td>
+</tr>
+<!--Test Case End Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{new Date()}</td>
+	<td>End_time</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case End Time = ${End_time}</td>
+	<td></td>
+</tr>
+<!--Test Case Execution Time-->
+<tr>
+	<td>storeEval</td>
+	<td>{(storedVars[&quot;End_time&quot;].getTime() - storedVars[&quot;Start_time&quot;].getTime())/1000}</td>
+	<td>diff</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Test Case Execution Time = ${diff}&nbsp;&nbsp;Seconds</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

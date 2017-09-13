@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://console-ondeck.bluemix.net/" />
+<title>SupportWidget</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SupportWidget</td></tr>
+</thead><tbody>
+<!------------------------------------------------------------------------->
+<!--Test Case Name:    SupportWidget_YS1-->
+<!--Purpose:                  Test the Support widget of Bluemix UI-->
+<!--Last Update:           Sept 12, 2017-->
+<!--TO DO:                    Remove the temp fix for Defect 4298-->
+<!-------------------------------------------------------------------------->
+<!--Open Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<!--Support > Add ticket-->
+<tr>
+	<td>click</td>
+	<td>id=add-ticket-menu</td>
+	<td></td>
+</tr>
+<!--Verify the content of the Add Ticket menu-->
+<tr>
+	<td>verifyText</td>
+	<td>css=p.ticket-selection-title</td>
+	<td>Support</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.support-tier-label</td>
+	<td>Tier level: FreeInformation</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=ul.ticket-categories &gt; p.main-section-title</td>
+	<td>I want to contact:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a &gt; li &gt; span</td>
+	<td>Sales</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/p[4]</td>
+	<td>I need help with:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.ticket-account &gt; span</td>
+	<td>My account or logging in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.ticket-billing &gt; span</td>
+	<td>Billing</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/p[5]</td>
+	<td>I need technical support for:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.ticket-resource &gt; span</td>
+	<td>Containers</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[4]/span</td>
+	<td>Infrastructure GT</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[5]/span</td>
+	<td>Infrastructure</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[6]/span</td>
+	<td>VMware</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[7]/span</td>
+	<td>APIs</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[8]/span</td>
+	<td>Application Services</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[9]/span</td>
+	<td>Blockchain</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[10]/span</td>
+	<td>Cloud Foundry Apps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[11]/span</td>
+	<td>Data &amp; Analytics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[12]/span</td>
+	<td>DevOps</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[13]/span</td>
+	<td>Finance</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dashboard-content &gt; div &gt; div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[14]/span</td>
+	<td>Functions</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[15]/span</td>
+	<td>Integrate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[16]/span</td>
+	<td>Internet of Things</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[17]/span</td>
+	<td>Media &amp; CDN</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[18]/span</td>
+	<td>Mobile</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[19]/span</td>
+	<td>Network</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[20]/span</td>
+	<td>Schematics</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[21]/span</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[22]/span</td>
+	<td>Storage</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/li[23]/span</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='sidebar']/div[4]/ul/p[6]</td>
+	<td>exact:Not sure?</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.ticket-technical &gt; span</td>
+	<td>Something else</td>
+</tr>
+<!--Close Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=a.close-sidebar &gt; svg</td>
+	<td></td>
+</tr>
+<!--Open Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>SKIP</td>
+	<td></td>
+</tr>
+<!--Support View Ticket-->
+<tr>
+	<td>click</td>
+	<td>id=view-tickets-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<!-------------------------- Defect 4298 -------------------------->
+<tr>
+	<td>verifyText</td>
+	<td>css=h3</td>
+	<td>Your sign-in information is incorrect. Please try again.</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>SKIP</td>
+	<td></td>
+</tr>
+<!-------------------------- Defect 4298 -------------------------->
+<tr>
+	<td>label</td>
+	<td>4298</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span.iconText</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.iconText</td>
+	<td>Open a support ticket</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.clearfix.mysupport &gt; span.iconText</td>
+	<td>View my support</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.clearfix.contactus &gt; span.iconText</td>
+	<td>Contact Us</td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>SKIP</td>
+	<td></td>
+</tr>
+<!--Open Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<!--Support > Find Answers -->
+<tr>
+	<td>click</td>
+	<td>id=find-answers-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.help-search-container &gt; p.main-section-title</td>
+	<td>Get help</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.help-details</td>
+	<td>Explore existing support articles.</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>css=input.help-search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.help-details.search-message-text</td>
+	<td>Get answers now. Search our documentation and posts from the Stack Overflow community (which we actively monitor).</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.btn-post-question</td>
+	<td>Post to Stack Overflow</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.main-section-title.title-centered</td>
+	<td>exact:Still having trouble?</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button.btn-submit-ticket</td>
+	<td>Get in Touch</td>
+</tr>
+<!--Close Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=a.close-sidebar &gt; svg</td>
+	<td></td>
+</tr>
+<!--Open Support menu-->
+<tr>
+	<td>click</td>
+	<td>css=li.bx--dropdown__menu-text.global-header__whitespace</td>
+	<td></td>
+</tr>
+<!--Support > Status-->
+<tr>
+	<td>click</td>
+	<td>id=status-menu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Verify Status page-->
+<tr>
+	<td>waitForText</td>
+	<td>id=statusTab</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=statusTab</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=notificationsTab</td>
+	<td>Notifications</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h4.bx--global-header__title--current-page.neutral-page</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//button[@value='issues']</td>
+	<td>Issues</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//button[@value='all']</td>
+	<td>All</td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
